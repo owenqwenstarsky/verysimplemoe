@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: verysimplemoe
+Version: 0.1.0
+Summary: A very small PyTorch MoE language model trainer for FineWeb
+Requires-Python: >=3.10
+Requires-Dist: torch>=2.2
+Requires-Dist: transformers>=4.40
+Requires-Dist: datasets>=2.19
+Requires-Dist: tqdm>=4.66

@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+src/verysimplemoe/__init__.py
+src/verysimplemoe/generate.py
+src/verysimplemoe/model.py
+src/verysimplemoe/train.py
+src/verysimplemoe.egg-info/PKG-INFO
+src/verysimplemoe.egg-info/SOURCES.txt
+src/verysimplemoe.egg-info/dependency_links.txt
+src/verysimplemoe.egg-info/entry_points.txt
+src/verysimplemoe.egg-info/requires.txt
+src/verysimplemoe.egg-info/top_level.txt

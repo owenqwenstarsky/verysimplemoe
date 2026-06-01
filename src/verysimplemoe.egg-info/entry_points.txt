@@ -1,0 +1,3 @@
+[console_scripts]
+verysimplemoe-generate = verysimplemoe.generate:main
+verysimplemoe-train = verysimplemoe.train:main

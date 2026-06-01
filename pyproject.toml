@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "verysimplemoe"
+version = "0.1.0"
+description = "A very small PyTorch MoE language model trainer for FineWeb"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.2",
+  "transformers>=4.40",
+  "datasets>=2.19",
+  "tqdm>=4.66",
+]
+
+[project.scripts]
+verysimplemoe-train = "verysimplemoe.train:main"
+verysimplemoe-generate = "verysimplemoe.generate:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
