@@ -26,6 +26,12 @@ The new research architecture is available as `v2-32x1m`:
 - router z-loss to keep router logits stable
 - optional phased expert training so only a subset of experts are trainable/routeable at a time
 
+The early v3 preset is `v3-2l-32x1m`:
+
+- same 32 experts/layer and 1M params/expert as v2
+- 2 transformer/MoE layers instead of 1
+- intended as the first quality-focused depth increase while keeping the v2 expert shape intact
+
 The default still uses `n_layers=1`, which means the model has one MoE block. If you raise `--n-layers`, each layer gets its own full expert set.
 
 ## Install
@@ -65,6 +71,25 @@ verysimplemoe-train \
   --batch-size 4 \
   --grad-accum-steps 4 \
   --block-size 256
+```
+
+## Train early v3: 2 layers, 32 experts/layer, 1M params/expert
+
+Recommended GPU command for a 50M-token FineWeb EDU run:
+
+```bash
+verysimplemoe-train \
+  --arch v3-2l-32x1m \
+  --dataset-name HuggingFaceFW/fineweb-edu \
+  --dataset-config sample-10BT \
+  --out-dir checkpoints/verysimplemoe-v3-2l-32x1m-fineweb-edu-50m \
+  --max-steps 6104 \
+  --batch-size 8 \
+  --grad-accum-steps 4 \
+  --block-size 256 \
+  --train-experts-per-phase 16 \
+  --expert-phase-steps 500 \
+  --save-every 1000
 ```
 
 Phased expert training means:

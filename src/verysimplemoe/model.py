@@ -66,6 +66,17 @@ ARCH_PRESETS: dict[str, dict[str, int | float | str]] = {
         "router_noise_std": 0.1,
         "router_z_loss_coef": 1e-4,
     },
+    "v3-2l-32x1m": {
+        "arch": "v3-2l-32x1m",
+        "n_layers": 2,
+        "d_model": 500,
+        "n_heads": 10,
+        "n_experts": 32,
+        "active_experts": 4,
+        "expert_hidden_size": 1000,
+        "router_noise_std": 0.1,
+        "router_z_loss_coef": 1e-4,
+    },
 }
 
 
